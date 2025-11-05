@@ -1,0 +1,12 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# VCS / OS
+.git
+.DS_Store
+
+# Local config
+ops/compose/.env
