@@ -1,0 +1,8 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+.venv/
+.git
+.gitignore
+services/api/test_*.py
+services/api/tests/
