@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: ops/docker/Dockerfile.api
+    environment:
+      REDIS_HOST: redis
+      REDIS_TTL: "86400"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  worker:
+    build:
+      context: ..
+      dockerfile: ops/docker/Dockerfile.worker
+    environment:
+      REDIS_HOST: redis
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7
+    expose:
+      - "6379"
